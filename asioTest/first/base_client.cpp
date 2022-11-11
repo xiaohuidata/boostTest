@@ -9,8 +9,24 @@ int main()
 	io_service  service;
 	ip::tcp::endpoint ep(ip::address::from_string("127.0.0.1"), 2001);
 	ip::tcp::socket sock(service);
-	sock.connect(ep);
 
+	bool connect = false;
+	try{
+		sock.connect(ep);
+		connect = true;
+	} catch(boost::system::system_error e) {
+		cerr << "error:" << e.code() << endl;
+	}
+	boost::system::error_code err;
+
+	if (!connect) {
+		sock.connect(ep, err);
+	}
+
+	if (err) {
+		cerr << "error:" << err.what() << endl;
+		return 0;
+	}
 	write(sock, buffer("send ok", 7));
 
 	char data[512];

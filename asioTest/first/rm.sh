@@ -1,1 +1,1 @@
-rm -f async_base_client async_base_service base_client base_service
+rm -f async_base_client async_base_service base_client base_service signal_test serial_port_test timer_test io_service_1 io_service_2 io_service_3
