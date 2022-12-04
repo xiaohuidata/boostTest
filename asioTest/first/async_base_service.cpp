@@ -16,13 +16,14 @@ void handle_accept(socket_ptr sock, const boost::system::error_code& err) {
 		cerr << "error:" << err.what() << err.message() << endl;
 		return;
 	}
-		char data[512];
-		size_t len = sock->read_some(buffer(data));
-		if (len > 0) {
+
+	char data[512];
+	size_t len = sock->read_some(buffer(data));
+	if (len > 0) {
 			std::string str = data;
 			cout << "len"<< len<< str << endl;
 			write(*sock, buffer("ok", 2));
-		}
+	}
 
 	socket_ptr sock_(new ip::tcp::socket(service));
 	start_accept(sock_);
