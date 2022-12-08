@@ -22,6 +22,9 @@ void handle_accept(socket_ptr sock, const boost::system::error_code& err) {
 	if (len > 0) {
 			std::string str = data;
 			cout << "len"<< len<< str << endl;
+			char buff[1024];
+			memset(buff, 0, 1024);
+			sprintf(buff, "%s", "ok");
 			write(*sock, buffer("ok", 2));
 	}
 
