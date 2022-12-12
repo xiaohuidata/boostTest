@@ -12,6 +12,10 @@ int main() {
 		sock.open(ip::tcp::v4());
 		sock.connect(ep);
 		sock.write_some(buffer("GET /index.html\r\n"));
+		while(!sock.available()) {
+			sleep(1);
+		}
+		cout << "bytes available " << sock.available() << endl;
 		char buff[1024];
 		sock.read_some(buffer(buff, 1024));
 		cout << "read" << buff << endl;
