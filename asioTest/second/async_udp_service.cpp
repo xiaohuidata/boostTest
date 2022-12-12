@@ -24,6 +24,7 @@ void on_send(const boost::system::error_code& err, std::size_t read_bytes) {
 
 int main(int argc, char* argv[])
 {
+	sock.set_option(ip::udp::socket::broadcast(true));
 	cout << "start " << i << endl;
 	stringstream ss;
 	ss << "ok " << i;
