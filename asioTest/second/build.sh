@@ -5,3 +5,6 @@ g++ -g -o udp_client udp_client.cpp -lboost_system -lpthread
 g++ -g -o udp_service udp_service.cpp -lboost_system -lpthread
 g++ -g -o async_udp_client async_udp_client.cpp -lboost_system -lboost_thread -lpthread
 g++ -g -o async_udp_service async_udp_service.cpp -lboost_system -lpthread
+g++ -g -o socket_option_test socket_option_test.cpp -lboost_system -lpthread
+g++ -g -o async_new_buffer async_new_buffer.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS
+g++ -g -o async_shared_buffer async_shared_buffer.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS

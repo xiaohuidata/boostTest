@@ -1,5 +1,5 @@
 #include <iostream>
-#include <boost/bind/bind.hpp>
+#include <boost/bind.hpp>
 #include <boost/asio.hpp>
 #include <time.h>
 
@@ -35,7 +35,8 @@ void handle_accept(socket_ptr sock, const boost::system::error_code& err) {
 
 
 void start_accept(socket_ptr sock) {
-	acc.async_accept(*sock, boost::bind(handle_accept, sock, boost::placeholders::_1));
+//	acc.async_accept(*sock, boost::bind(handle_accept, sock, boost::placeholders::_1));
+	acc.async_accept(*sock, boost::bind(handle_accept, sock, _1));
 }
 
 void deadline_handler(const boost::system::error_code& ) {
