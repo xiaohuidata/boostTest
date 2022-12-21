@@ -1,0 +1,1 @@
+rm -f boost_function_bind standard_algorithms_test
