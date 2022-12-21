@@ -1,1 +1,1 @@
-rm -f base socket_test message_peek_test udp_service udp_client async_udp_service async_udp_client socket_option_test async_new_buffer
+rm -f base socket_test message_peek_test udp_service udp_client async_udp_service async_udp_client socket_option_test async_new_buffer async_shared_buffer

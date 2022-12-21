@@ -26,7 +26,7 @@ void connect_handler(const boost::system::error_code & ec) {
 	if (!ec) {
 		write(sock, buffer("send ok", 7));
 		char * buff = new char[512];
-		sock.async_send(buffer(buff, 512), boost::bind(on_read, buffer, _1, _2));
+		sock.async_send(buffer(buff, 512), boost::bind(on_read, buff, _1, _2));
 
 	} else {
 		cout << "error" << ec.what() << ec.message() <<  endl;
