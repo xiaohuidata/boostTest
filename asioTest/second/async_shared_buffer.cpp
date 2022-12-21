@@ -32,7 +32,7 @@ void connect_handler(const boost::system::error_code & ec) {
 	if (!ec) {
 		write(sock, buffer("send ok", 7));
 		shared_buffer buff(512);
-		sock.async_send(buff.asio_buff(), boost::bind(on_read, buffer, _1, _2));
+		sock.async_send(buff.asio_buff(), boost::bind(on_read, buff, _1, _2));
 	} else {
 		cerr << "error" << ec.what() << ec.message() <<  endl;
 	}
