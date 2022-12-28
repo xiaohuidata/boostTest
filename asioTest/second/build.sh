@@ -14,3 +14,8 @@ g++ -g -o read_until_test read_until_test.cpp -lboost_system -lboost_thread -lpt
 g++ -g -o async_persistent_run async_persistent_run.cpp -lboost_system -lboost_thread -lpthread
 g++ -g -o post_1 post_1.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS
 g++ -g -o post_2 post_2.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS
+g++ -g -o dispatch_1 dispatch_1.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS
+g++ -g -o wrap_1 wrap_1.cpp -lboost_system -lboost_thread -lpthread
+
+g++ -g -o connection_struct connection_struct.cpp -lboost_system -lboost_thread -lpthread -DBOOST_BIND_GLOBAL_PLACEHOLDERS
+g++ -g -o connection_service connection_service.cpp -lboost_system -lboost_thread -lpthread
