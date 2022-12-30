@@ -1,0 +1,1 @@
+rm -f sync_tcp_client  sync_tcp_service async_tcp_client async_tcp_service sync_upd_client sync_udp_service
